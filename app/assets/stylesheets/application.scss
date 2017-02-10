@@ -36,7 +36,10 @@
       font-size:18px;
       background:#e27373;
   }
+  
   .col-md-8, .col-md-4{
+      
+      vertical-align:top;
       display:inline-block;
       border: 1px solid #000fff;
       h2{
@@ -45,8 +48,8 @@
   }
   
 .col-md-8{
-    width:64%;
+    width:63%;
 }
-.col-md-4{
+.col-md-4{padding: 0 5px 30px 15px;
     width:34%;
 }
