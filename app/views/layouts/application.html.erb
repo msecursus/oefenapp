@@ -5,8 +5,30 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body>
+  <nav>
+  <ul>
+    <li><%= link_to "sign up", new_user_registration_path %></li>
+    <li><%= link_to "sign in", new_user_session_path %></li>
+    <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to "home", pages_index_path %></li>
+    <li><%= link_to "fast", pages_slow_path %></li>
+    <li><%= link_to "slow", pages_fast_path %></li>
+    <li>
+      <ul>
+          
+          <li><%= link_to "edit profile", edit_user_registration_path %></li>
+          <li><%= link_to "sign up", new_user_registration_path %></li>
+      </ul>
+    </li>
+    
+  </ul>
+</nav>
+ <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
 <div class="container">
   <%= yield %>
 </div>
