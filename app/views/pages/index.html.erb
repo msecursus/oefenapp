@@ -7,7 +7,9 @@
    <div class="col-md-4 well">
     <h2>Recente Posts</h2> 
     <% @articles.each do |a| %>
+   
       <p><%= link_to a.title, a %></p> 
+       -- <%= a.user.username %> -- : 
       <%= truncate(a.body) %>
     <% end %>
   </div>  
