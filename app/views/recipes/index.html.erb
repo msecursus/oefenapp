@@ -1,0 +1,39 @@
+
+<p id="notice"><%= notice %></p>
+
+
+<div class="wrap">
+  <div class="paginate"><%= will_paginate %></div>
+  <h1>Listing Recipes</h1>
+  <hr />
+  <% @recipes.each do |recipe| %>
+ <ul class="listing-recipes">
+    
+     <li><h2 class="recipename"><%= recipe.name %></h2></li>
+     <li><p><%= image_tag recipe.image.url(:thumb), class: "recipeimg"%></p></li>
+     
+     <li><h3><%= recipe.description %></h3></li>
+     <li><small>created:<%= time_ago_in_words(recipe.created_at) %> ago</small></li>
+     <li><small>updated:<%= time_ago_in_words(recipe.updated_at) %> ago</small></li>
+     
+     <li>
+       <p>
+         <%= link_to 'Show', recipe %>
+          <% if recipe.user == current_user %>
+         <%= link_to 'Edit', edit_recipe_path(recipe) %>
+         <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+         <% end %>
+       </p>
+     </li>
+      
+     
+    </ul>
+    <% end %>
+    
+<br>
+<hr class="hr">
+<%= link_to 'New Recipe', new_recipe_path %> 
+<hr />
+<div class="paginate"><%= will_paginate %></div>
+</div>
+ 

@@ -1,0 +1,16 @@
+<div class="media">
+  <div class="left"style="float:left;">
+    <p style="color:#d2dcf2; background:#092259; padding:5px;">By :<%= comment.user.username %> </p>
+     
+  </div>
+  <div class="media-body">
+    <p class="media-heading" style="float:right;">
+     <%= time_ago_in_words(comment.created_at) %> 
+    </p><br />
+   <p style="background:#d2dcf2; padding:30px 20px 20px 20px;"><%= comment.body %></p>
+  </div>
+  
+</div>
+<%= link_to 'Back', articles_path %>
+<%= link_to 'edit', edit_article_comment_path(comment.article, comment) %>
+<%= link_to 'delete', [comment.article, comment], method: :delete, data: {confirm: "Sure ???." } %>

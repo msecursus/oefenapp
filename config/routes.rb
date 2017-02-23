@@ -1,8 +1,25 @@
 Rails.application.routes.draw do
  
+ 
   devise_for :users, :controllers => { registrations: 'registrations' } 
-  resources :articles 
+  resources :articles do
+    resources :comments
+    
+  end 
+  
+  resources :recipes do
+    member do
+      post 'like'
+    end
+  end
+  
+  resources :items do
+    member do
+      patch :complete
+    end
+  end
   root 'pages#index'
+  
   get 'pages/index'
 
   

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.name %>
+  
+</p>
+
+
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description %>
+</p>
+<p>
+  <%= image_tag @recipe.image.url(:medium) %>
+</p>
+<div class="prepare">
+  <p>
+  <strong>Prepare:</strong>
+  <%= @recipe.prepare %>
+</p>
+<div id="rate-div" class="right">
+  <div id="like-div" class="icon-div">
+    
+      <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+        <p><%= image_tag("Icon40-hart.png", width: '40', height: "40", alt: 'like', class: "like-icon") %></p>
+        <p><%= @recipe.likes_total %></p>
+      <% end %>
+    
+    
+  </div>
+  
+  &nbsp
+  <div id="dislike-div" class="icon-div">
+    <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+      
+      <p><%= image_tag("Icon40-cloud.png", width: '40', height: "40", alt: 'dislike', class: "like-icon") %></p>
+      <p><%= @recipe.dislikes_total %></p>
+    <% end %>
+  </div>
+   
+</p>
+</div>
+
+</div>
+
+<% if @recipe.user == current_user %>
+ 
+         
+         <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+         
+<% end %>
+<%= link_to 'Back', recipes_path %>

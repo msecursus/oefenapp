@@ -1,17 +1,34 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<% if current_user %>
+<h1><%= current_user.username %></h1>
+<% end %>
 <div class="row">
   <div class="col-md-8">
     <h2>Colmd8</h2> 
   </div>
    <div class="col-md-4 well">
-    <h2>Recente Posts</h2> 
+     <div>
+       <h2>Recente Posts</h2> 
     <% @articles.each do |a| %>
    
-      <p><%= link_to a.title, a %></p> 
+      <h3><%= link_to a.title, a %></h3> 
        -- <%= a.user.username %> -- : 
       <%= truncate(a.body) %>
     <% end %>
+     </div>
+    
+    
+    <div>
+      <h2>Recente Recepten</h2> 
+      <% @recipes.each do |r| %>
+   
+      <h3><%= link_to r.name, r %></h3> 
+       -- <%= r.user.username %> -- : 
+      <%= truncate(r.description) %>
+      <% end %>
+    </div>
   </div>  
+  
+   
+  
 </div>
   

@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
+
+<p style="font-size:3em;">
+  <strong><%= @article.title %></strong>
+  
 </p>
-
 <p>
-  <strong>Body:</strong>
+  By : <strong><%= @article.user.username %></strong>
+</p>
+<p style="background:#f4ebeb; padding:15px;">
+  
   <%= @article.body %>
 </p>
-
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+
+<%= render @article.comments %>
+
+
+
+<p>Make a comment.</p>
+<%= render 'comments/form' %>

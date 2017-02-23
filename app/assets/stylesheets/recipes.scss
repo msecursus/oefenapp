@@ -1,0 +1,58 @@
+// Place all the styles related to the Recipes controller here.
+// The 
+*{
+  padding:0px;
+  margin:0px;
+}
+.prepare{
+    background:#fff;
+    width: 290px;
+    padding: 5px;
+    color:#8c69ff;
+    #rate-div{
+      text-align: right;
+      .icon-div{
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+      }
+    }
+  }
+.wrap{
+  text-align: center;
+}
+ul.listing-recipes{
+  
+  border: 3px solid brown;
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+  min-height: 350px;
+  li{
+    text-align: center;
+    list-style-type: none;
+    .recipeimg{
+      width: 100%;
+    }
+    .recipename{
+       background: brown;
+    }
+  }
+}
+.hr{
+  clear: both;
+}
+.paginate{
+  a{
+    color: yellow;
+    line-height: 35px;
+    padding: 3px 6px;
+  }
+  a:hover{
+    background: blue;
+  }
+    color: #fff;
+     background: brown;
+     margin: 20px 0;
+  
+}

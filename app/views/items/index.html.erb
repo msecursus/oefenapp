@@ -1,0 +1,23 @@
+<h1>Aufgaben</h1>
+
+<% @items.each do |item| %>
+<div>
+<% if item.completed? %>
+  <h2><s><%= link_to item.title, item %></s></h2> 
+  <p><%= time_ago_in_words(item.completed_at) %> ago</p>
+  
+  <i class="fa fa-check" aria-hidden="true" style="float:right; color:green; font-size:2em;"></i>
+<% else %>
+   <h2><%= link_to item.title, item %></h2> 
+  <p><%= item.description %></p> 
+  
+  <%= link_to complete_item_path(item), method: :patch do %>
+    <i class="fa fa-check" aria-hidden="true" style="float:right;"></i>
+  <%end%>
+<% end %>
+</div>
+
+
+<% end %>
+
+<button type="button" class="b"><%= link_to "New", new_item_path %></button>
