@@ -1,6 +1,10 @@
 class Recipe < ActiveRecord::Base
   belongs_to :user
   has_many :likes
+  has_many :recipe_styles
+  has_many :styles, through: :recipe_styles
+  has_many :recipe_ingredients
+  has_many :ingredients, through: :recipe_ingredients
   
   has_attached_file :image, styles: { medium: "300x300>", small: "200x200>", thumb: "100x100>" }
  validates_attachment :image,

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221181512) do
+ActiveRecord::Schema.define(version: 20170224121737) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(version: 20170221181512) do
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -48,6 +52,16 @@ ActiveRecord::Schema.define(version: 20170221181512) do
     t.datetime "updated_at"
   end
 
+  create_table "recipe_ingredients", force: :cascade do |t|
+    t.integer "ingredient_id"
+    t.integer "recipe_id"
+  end
+
+  create_table "recipe_styles", force: :cascade do |t|
+    t.integer "style_id"
+    t.integer "recipe_id"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -59,6 +73,10 @@ ActiveRecord::Schema.define(version: 20170221181512) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,6 +100,8 @@ ActiveRecord::Schema.define(version: 20170221181512) do
     t.boolean  "admin",                  default: false
     t.string   "firstname"
     t.string   "lastname"
+    t.string   "password_digest"
+    t.integer  "user_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
