@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show, :index]
   # GET /recipes
   # GET /recipes.json
   def index
@@ -80,6 +80,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :prepare, :image)
+      params.require(:recipe).permit(:name, :description, :prepare, :image, style_ids:[], ingredient_ids:[])
     end
 end

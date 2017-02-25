@@ -1,0 +1,26 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+.formbtn{
+  background: lightgreen;
+  color: darkbrown;
+  width: 130px;
+  line-height: 40px;
+}
+.formbtn:hover{
+  background: darkgreen;
+  color: lightgreen;
+  font-size: 0.9em;
+  //transition: background 0.6s;
+  transition: color 0.6s;
+  
+}
+.partial-ul{
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px 20px;
+  color: brown;
+  font-wight: bold
+}
+

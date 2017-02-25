@@ -18,6 +18,8 @@ Rails.application.routes.draw do
       patch :complete
     end
   end
+  resources :styles, only: [:new, :create, :show]
+  resources :ingredients, only: [:new, :create, :show]
   root 'pages#index'
   
   get 'pages/index'

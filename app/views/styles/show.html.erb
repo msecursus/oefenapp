@@ -1,15 +1,15 @@
 
 <p id="notice"><%= notice %></p>
 
-
+ 
 <div class="wrap">
-  <div class="paginate"><%= will_paginate %></div>
-  <h1>Listing Recipes</h1>
+  <div class="paginate"><%= will_paginate @recipes %></div>
+ <h1><%= @style.name %> Recipes</h1>
   <hr />
-  <% @recipes.each do |recipe| %>
+  <% @style.recipes.each do |recipe| %>
  <ul class="listing-recipes">
     
-     <li><h2 class="recipename"><%= link_to recipe.name, recipe %></h2></li>
+     <li><h2 class="recipename"><%= recipe.name %></h2></li>
      <li><p><%= image_tag recipe.image.url(:thumb), class: "recipeimg"%></p></li>
      
      <li><h3><%= recipe.description %></h3></li>
@@ -42,6 +42,6 @@
 <hr class="hr">
 <%= link_to 'New Recipe', new_recipe_path %> 
 <hr />
-<div class="paginate"><%= will_paginate %></div>
+<div class="paginate"><%= will_paginate @recipes %></div>
 </div>
  

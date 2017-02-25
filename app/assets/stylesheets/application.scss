@@ -13,10 +13,149 @@
  *= require_tree .
  *= require_self
  */
-     nav ul li{
-    display:inline;
-    margin-right:40px;
-  }
+ *{
+  padding:0px;
+  margin:0px;
+}
+ a{
+   text-decoration:none;
+ }
+ nav{
+   .sub1, .sub2, .sub3{
+      display:none;
+      position:absolute;
+      top:26;
+      left:0px;
+    }
+    .darrow{
+      color:#fff;
+      font-size: 10px;
+      position:absolute;
+      top: 10px;
+      right: 4px;
+      background: #51360e;
+    }
+    
+   a{
+     display: block;//zodat t a tag overal klikbaar is in dat gedisplayde block,width en height moeten erbij
+     width: 125px;//tzelfde als de li waar t in zit 
+     line-height: 25px;
+     background: #a0c477;
+     border:1px solid #ccc;
+   }
+   ul{
+     display: inline-block;
+     vertical-align:top;
+    //float:left;
+   }
+   li{
+      
+     width: 125px;
+     text-align: center;
+   //float:left;
+     display: inline-block;
+     vertical-align:top;
+   }
+    li:hover > a{
+      background:#0ffff0;
+    }
+    li:hover a:hover{
+       background:#9fffff;
+    }
+    li:hover .sub1, li:hover .sub2, li:hover .sub3{
+          display:block;
+        } 
+    
+/**NAV UL *************/
+   
+   .left{
+     li{
+        // width: 125px;
+     text-align: center;
+     position: relative;
+     display: inline-block;
+     
+     //float:left;
+     }
+     .sub4, .sub5, .sub3{
+      display:none;
+      position:absolute;
+      top:26;
+      left:0px;
+    }
+   }
+   .right{
+     float: right;
+    
+       li{
+     
+    // width: 125px;
+     text-align: center;
+     position: relative;
+     display: inline-block;
+     
+     //float:left;
+     } 
+    .sub1, .sub2, .sub3{
+      display:none;
+      position:absolute;
+      top:26;
+      left:0px;
+    }
+    .darrow{
+      color:#fff;
+      font-size: 10px;
+      position:absolute;
+      top: 10px;
+      right: 4px;
+      background: #51360e;
+    }
+    .larrow{
+      color:#fff;
+      font-size: 10px;
+      position:absolute;
+      top: 10px;
+      left: 4px;
+    }
+     
+     .sub1{
+       
+        li{
+          .sub1a{
+             display:none;
+            position:absolute;
+            top:0px;
+            right: 127px;
+              a{
+               color: red;
+               margin-right:20px;
+              }
+           }
+        }
+        li:hover .sub1a{
+          display:block;
+        }
+            
+       }
+     
+         
+     .sub2{
+       li{
+       a{
+        
+        }
+       }
+     }
+     .sub3{
+       li{
+       a{
+       
+       }
+     }
+     }
+   }
+ }
+ 
   .container{
       margin:0 auto;
       width:70%;

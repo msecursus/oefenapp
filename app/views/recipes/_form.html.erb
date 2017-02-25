@@ -6,8 +6,23 @@
     <%= f.input :description %><br />
     <%= f.file_field :image %>
     <%= f.input :prepare %>
+   
   </div>
-
+  
+  
+  <div>
+    <strong>Categories:</strong>
+    <%= f.collection_check_boxes :style_ids, Style.all, :id, :name do |cb| %>
+      <%= cb.label(class: "checkbox_inline") {cb.check_box(class: "checkbox") + cb.text} %>
+    <% end %><br />
+  </div>
+  <div>
+   <strong>Ingredients:</strong>
+    <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cb| %>
+      <%= cb.label(class: "checkbox_inline") {cb.check_box(class: "checkbox") + cb.text} %>
+    <% end %><br />
+  </div>
+  
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
