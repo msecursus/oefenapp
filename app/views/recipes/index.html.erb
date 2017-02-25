@@ -13,14 +13,16 @@
      <li><p><%= image_tag recipe.image.url(:thumb), class: "recipeimg"%></p></li>
      
      <li><h3><%= recipe.description %></h3></li>
-      
+    <!--<% if recipe.styles.any? %>  
      <li class="recipestyle-list">
        Styles : <span><%= render recipe.styles %></span>
      </li>
-    <li>
-      <p>Ingred : <%= render recipe.ingredients %></p>
-    </li>
-     
+     <% end %>
+     <% if recipe.ingredients.any? %>  
+      <li>
+        <p>Ingred : <%= render recipe.ingredients %></p>
+      </li>
+     <% end %>-->
      <li><small>created:<%= time_ago_in_words(recipe.created_at) %> ago</small></li>
      <li><small>updated:<%= time_ago_in_words(recipe.updated_at) %> ago</small></li>
      

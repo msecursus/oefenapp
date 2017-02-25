@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     #@recipes = Recipe.all.sort_by{|likes| likes.likes_total}.reverse  ,dit werkt niet goed samen met regel meteen hieronder maar alleen wel ik heb gekozen voor dee onderste regel.
-    @recipes = Recipe.paginate(page: params[:page], per_page: 4)
+    @recipes = Recipe.paginate(page: params[:page], per_page: 6)
   end
 
   # GET /recipes/1

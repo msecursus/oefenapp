@@ -1,13 +1,18 @@
  <ul class="partial-ul">
+    <% if @recipe.styles.any? %>  
     <li class="recipestyle-list">
        Styles : <span><%= render @recipe.styles %></span>
      </li>
+     <% end %>
+     
     
  </ul>
  <ul class="partial-ul">
+    <% if @recipe.styles.any? %>  
    <li>
       Ingred : <%= render @recipe.ingredients %>
     </li>
+    <% end %>
  </ul>
  
 <p>
