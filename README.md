@@ -17,7 +17,7 @@ To get started, just do the following:
 Happy coding!
 The Cloud9 IDE team
 
-
+used dev heb art met com rec met sty en ingr en img paperclip ---------can't make a usercontroller and admin 
 ## Support & Documentation
 
 Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
